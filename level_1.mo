@@ -22,15 +22,15 @@ actor RfDAO {
     };
 
     //Define a list of goals for your DAO
-    var goals: Text = "";
+    let goals: Buffer.Buffer<Text> = Buffer.Buffer<Text(0)>;
 
     //Implement the addGoal function
     public func addGoal(goal : Text) : async () {
-      goals := goals # goal;
+      goals.add(goal);
     };
 
     //Implement the getGoals query function
-    public func getGoals() : async Text {
-      goals;
+    public query func getGoals() : async [Text] {
+      return Buffer.toArray(goals);
     };
 }
