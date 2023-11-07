@@ -1,3 +1,5 @@
+import Buffer "mo:base/Buffer";
+
 actor RfDAO {
     
     //Define a name for the DAO
@@ -22,7 +24,7 @@ actor RfDAO {
     };
 
     //Define a list of goals for your DAO
-    let goals: Buffer.Buffer<Text> = Buffer.Buffer<Text(0)>;
+    let goals: Buffer.Buffer<Text> = Buffer.Buffer<Text>(3);
 
     //Implement the addGoal function
     public func addGoal(goal : Text) : async () {
